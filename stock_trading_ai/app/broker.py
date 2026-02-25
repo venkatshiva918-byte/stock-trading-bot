@@ -26,7 +26,26 @@ class MockBroker(Broker):
         logging.info("Initialized MockBroker with $100,000")
 
     def get_portfolio(self):
-        return self.portfolio
+        # Convert simple dict to match Alpaca structure
+        cash = self.portfolio.get("USD", 0)
+        positions = []
+        # Value is cash + sum of (qty * 0) since we don't have prices
+        portfolio_value = cash
+
+        for symbol, qty in self.portfolio.items():
+            if symbol != "USD":
+                positions.append({
+                    "symbol": symbol,
+                    "qty": qty,
+                    "market_value": 0, # Mock value
+                    "current_price": 0 # Mock value
+                })
+
+        return {
+            "cash": float(cash),
+            "portfolio_value": float(portfolio_value),
+            "positions": positions
+        }
 
     def buy(self, symbol, quantity):
         logging.info(f"Mock Buy: {quantity} shares of {symbol}")

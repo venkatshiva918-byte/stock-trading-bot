@@ -1,0 +1,53 @@
+HOW TO RUN THE MOBILE APP
+=========================
+
+PREREQUISITES
+-------------
+1. Node.js and npm installed (https://nodejs.org/).
+2. Expo CLI installed (optional, can use npx).
+3. Android Studio (for Android Emulator) or Xcode (for iOS Simulator) if running on computer.
+4. Expo Go app on your physical device if running on phone.
+
+BACKEND SETUP
+-------------
+1. Open a terminal.
+2. Navigate to stock_trading_ai folder.
+3. Install backend dependencies (if not done):
+   pip install -r requirements.txt
+4. Run the backend:
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+MOBILE APP SETUP
+----------------
+1. Open a new terminal.
+2. Navigate to the mobile app folder:
+   cd stock_trading_ai/mobile_app
+3. Install dependencies:
+   npm install
+
+RUNNING THE APP
+---------------
+1. Start the Expo server:
+   npx expo start
+
+2. To run on Android Emulator:
+   - Make sure Android Emulator is running.
+   - Press 'a' in the terminal.
+
+3. To run on iOS Simulator (Mac only):
+   - Make sure iOS Simulator is running.
+   - Press 'i' in the terminal.
+
+4. To run on Physical Device:
+   - Scan the QR code with Expo Go app (Android) or Camera app (iOS).
+   - Ensure your phone and computer are on the same Wi-Fi network.
+
+TROUBLESHOOTING
+---------------
+- Connection Refused:
+  - If running on Android Emulator, the app tries to connect to http://10.0.2.2:8000.
+  - If running on iOS Simulator, it uses http://localhost:8000.
+  - If running on a physical device, you need to change the API URL in `src/api/api.js` to your computer's local IP address (e.g., http://192.168.1.5:8000).
+
+- Backend not reachable:
+  - Ensure the backend is running on 0.0.0.0 so it accepts external connections.
