@@ -1,0 +1,33 @@
+HOW TO GET AN API KEY FOR REAL MONEY TRADING (Alpaca Example)
+============================================================
+
+To trade with real money (or paper money simulation), you need an account with a brokerage that offers an API. This project is configured to work easily with **Alpaca Markets**, a commission-free API-first brokerage.
+
+Here is how to get your API keys:
+
+1.  **Sign Up**: Go to https://alpaca.markets/ and click "Sign Up".
+2.  **Verify Email**: Verify your email address.
+3.  **Log In**: Log in to your new Alpaca dashboard.
+4.  **Paper Trading vs. Live Trading**:
+    *   On the dashboard, you will see a toggle for "Paper Trading" vs "Live Trading".
+    *   **HIGHLY RECOMMENDED**: Start with "Paper Trading". This uses fake money so you can test without risk.
+5.  **Generate Keys**:
+    *   Look for the box labeled "API Keys" on the right side of the dashboard.
+    *   Click "Generate New Key".
+    *   You will see two long strings:
+        *   **API Key ID**: (e.g., PK123456789...)
+        *   **Secret Key**: (e.g., a very long string of random characters)
+    *   **IMPORTANT**: Copy these keys immediately! You cannot see the Secret Key again once you close the window.
+
+6.  **Configure Your AI**:
+    *   Open the file `app/config.py` in this folder.
+    *   Replace the empty strings with your keys:
+
+        API_KEY = "PASTE_YOUR_API_KEY_HERE"
+        API_SECRET = "PASTE_YOUR_SECRET_KEY_HERE"
+
+    *   If you are ready for REAL money, change `TRADING_MODE` to "real" and `BASE_URL` to "https://api.alpaca.markets".
+
+WARNING:
+-   Never share your Secret Key with anyone.
+-   Be careful with automated trading. Start small and monitor it closely.

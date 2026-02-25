@@ -1,0 +1,29 @@
+HOW TO INSTALL THE TRADING AI (Windows/Mac/Linux)
+=====================================================
+
+1.  **Install Python**:
+    -   You need Python installed. If you don't have it, download it from https://www.python.org/downloads/.
+
+2.  **Open a Terminal**:
+    -   On Windows: Search for "Command Prompt" or "PowerShell".
+    -   On Mac/Linux: Open "Terminal".
+
+3.  **Navigate to the Folder**:
+    -   Use the `cd` command to go to where you extracted this zip file.
+    -   Example: `cd Downloads/stock_trading_ai`
+
+4.  **Install Dependencies**:
+    -   Run this command:
+
+        pip install -r requirements.txt
+
+    -   If that doesn't work, try `pip3 install -r requirements.txt`.
+
+5.  **Verify Installation**:
+    -   After installation is complete, run:
+
+        python -m uvicorn app.main:app --version
+
+    -   If it prints a version number, you are ready to trade!
+
+See HOW_TO_RUN.txt for instructions on starting the bot.

@@ -1,0 +1,42 @@
+HOW TO RUN THE TRADING AI
+==========================
+
+Once installed (see HOW_TO_INSTALL.txt), follow these steps to run the bot:
+
+1.  **Start the Server**:
+    -   In your terminal, navigate to the `stock_trading_ai` folder.
+    -   Run this command:
+
+        uvicorn app.main:app --reload
+
+    -   You should see output like:
+        INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+2.  **Use the Dashboard**:
+    -   Open your web browser and go to:
+        http://127.0.0.1:8000/docs
+
+    -   This is the Swagger UI. You can test the API here.
+
+3.  **Try a Manual Trade**:
+    -   Click on `POST /trade/manual` -> "Try it out".
+    -   Enter a JSON body like:
+        {
+          "symbol": "AAPL",
+          "quantity": 10,
+          "side": "buy"
+        }
+    -   Click "Execute".
+
+4.  **Try an AI Trade**:
+    -   Click on `POST /trade/ai` -> "Try it out".
+    -   Enter a JSON body like:
+        {
+          "symbol": "GOOGL",
+          "quantity": 5
+        }
+    -   Click "Execute".
+    -   The AI will analyze the stock and decide whether to BUY, SELL, or HOLD.
+
+IMPORTANT: By default, this runs in "mock" mode (fake money).
+To switch to real money (or Paper Trading), see HOW_TO_GET_API_KEY.txt.
