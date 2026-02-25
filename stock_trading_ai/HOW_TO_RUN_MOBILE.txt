@@ -21,7 +21,10 @@ MOBILE APP SETUP
 ----------------
 1. Open a new terminal.
 2. Navigate to the mobile app folder:
-   cd stock_trading_ai/mobile_app
+   - If you are in the project root folder (stock_trading_ai), run:
+     cd mobile_app
+   - If you are outside the project folder, run:
+     cd stock_trading_ai/mobile_app
 3. Install dependencies:
    npm install
 

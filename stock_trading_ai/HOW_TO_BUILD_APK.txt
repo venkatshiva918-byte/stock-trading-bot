@@ -18,7 +18,10 @@ STEPS TO BUILD APK
    eas login
 
 3. Navigate to the mobile app directory:
-   cd stock_trading_ai/mobile_app
+   - If you are in the project root folder (stock_trading_ai), run:
+     cd mobile_app
+   - If you are outside the project folder, run:
+     cd stock_trading_ai/mobile_app
 
 4. Configure the project (if not already done):
    eas build:configure
