@@ -1,0 +1,44 @@
+HOW TO RUN THIS PROJECT IN VISUAL STUDIO CODE (VS CODE)
+=========================================================
+
+1.  **Extract the Zip File**:
+    -   Right-click `stock_trading_ai.zip` and choose "Extract All" (or "Unzip").
+    -   This will create a folder named `stock_trading_ai`.
+
+2.  **Open VS Code**:
+    -   Launch Visual Studio Code.
+
+3.  **Open the Folder**:
+    -   Click **File** -> **Open Folder...**
+    -   Select the `stock_trading_ai` folder you just extracted.
+    -   In the "Explorer" pane (left side), you should see files like `app/`, `requirements.txt`, etc.
+
+4.  **Open the Integrated Terminal**:
+    -   Click **Terminal** -> **New Terminal** in the top menu.
+    -   A terminal window will appear at the bottom of the screen.
+
+5.  **Install Requirements (First Time Only)**:
+    -   Type this command in the terminal and press Enter:
+
+        pip install -r requirements.txt
+
+    -   (Note: If `pip` fails, try `pip3 install -r requirements.txt` or `python -m pip install -r requirements.txt`)
+
+6.  **Configure API Keys**:
+    -   In the file explorer, double-click `app/config.py`.
+    -   Replace `API_KEY = ""` with `API_KEY = "YOUR_ALPACA_KEY_HERE"`.
+    -   Replace `API_SECRET = ""` with `API_SECRET = "YOUR_ALPACA_SECRET_HERE"`.
+    -   Save the file (Ctrl+S or Cmd+S).
+
+7.  **Run the Bot**:
+    -   In the terminal, type:
+
+        uvicorn app.main:app --reload
+
+    -   Wait for the message: `Application startup complete`.
+
+8.  **Test It**:
+    -   Hold **Ctrl** (or **Cmd** on Mac) and click the link `http://127.0.0.1:8000` in the terminal.
+    -   Or open your browser and go to: http://127.0.0.1:8000/docs
+
+Congratulations! Your AI trading bot is now running in VS Code.
