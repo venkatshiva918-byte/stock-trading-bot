@@ -1,0 +1,50 @@
+HOW TO BUILD APK FOR ANDROID
+============================
+
+The mobile app is configured for Expo Application Services (EAS) to build standalone Android APK files.
+
+PREREQUISITES
+-------------
+1. Node.js and npm installed.
+2. Expo account (free) -> https://expo.dev/signup
+
+STEPS TO BUILD APK
+------------------
+
+1. Install EAS CLI globally:
+   npm install -g eas-cli
+
+2. Login to your Expo account:
+   eas login
+
+3. Navigate to the mobile app directory:
+   cd stock_trading_ai/mobile_app
+
+4. Configure the project (if not already done):
+   eas build:configure
+
+5. Run the build command for Android (Preview Profile):
+   eas build -p android --profile preview
+
+   - The `--profile preview` flag tells EAS to build an APK (installable on any Android device) instead of an AAB (for Google Play Store).
+   - Follow the prompts in the terminal.
+   - Once the build is complete, EAS will provide a download link for the .apk file.
+
+6. Download and Install:
+   - Download the APK from the link provided.
+   - Transfer it to your Android device via USB, Google Drive, or email.
+   - Enable "Install from Unknown Sources" on your device if prompted.
+   - Install and run the app.
+
+NOTE ON LOCAL BUILD (Advanced)
+------------------------------
+If you prefer to build locally without using Expo's cloud service, run:
+   eas build --platform android --local
+
+This requires:
+- Java JDK 11 or 17
+- Android SDK
+- Gradle
+- Setting up environment variables (JAVA_HOME, ANDROID_HOME)
+
+Using the cloud build (steps 1-5) is recommended as it handles the environment setup for you.
