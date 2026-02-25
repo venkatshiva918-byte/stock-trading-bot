@@ -10,6 +10,7 @@
     },
     "android": {
       "package": "com.stocktradingai.mobile",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#FFFFFF"
       }

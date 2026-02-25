@@ -51,3 +51,17 @@ This requires:
 - Setting up environment variables (JAVA_HOME, ANDROID_HOME)
 
 Using the cloud build (steps 1-5) is recommended as it handles the environment setup for you.
+
+TROUBLESHOOTING BUILD FAILURES
+------------------------------
+If the build fails (e.g., "Gradle build failed"), try the following:
+
+1. Check the build logs on the Expo dashboard (link provided in the error message).
+   - Look for specific errors in the "Run gradlew" phase.
+   - Sometimes transient network issues occur; try running the build again.
+
+2. Ensure `app.json` has a valid `android.package` and `android.versionCode`.
+   - The current code includes these, but if you modified them, ensure they are correct.
+
+3. Clear cache and rebuild:
+   eas build -p android --profile preview --clear-cache
