@@ -63,5 +63,9 @@ If the build fails (e.g., "Gradle build failed"), try the following:
 2. Ensure `app.json` has a valid `android.package` and `android.versionCode`.
    - The current code includes these, but if you modified them, ensure they are correct.
 
-3. Clear cache and rebuild:
+3. Ensure correct Java Version:
+   - The `eas.json` file has been updated to use `image: "latest"`, which provides Java 17 (required by modern Android Gradle plugins).
+   - If you modify `eas.json`, do not remove this setting.
+
+4. Clear cache and rebuild:
    eas build -p android --profile preview --clear-cache
