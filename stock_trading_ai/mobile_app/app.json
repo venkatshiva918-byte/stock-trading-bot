@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Stock Trading AI",
+    "slug": "stock-trading-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "ios": {
+      "bundleIdentifier": "com.stocktradingai.mobile",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.stocktradingai.mobile",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#FFFFFF"
+      }
+    }
+  }
+}
