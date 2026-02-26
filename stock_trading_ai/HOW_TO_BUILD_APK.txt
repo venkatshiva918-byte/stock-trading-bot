@@ -67,5 +67,9 @@ If the build fails (e.g., "Gradle build failed"), try the following:
    - The `eas.json` file has been updated to use `image: "latest"`, which provides Java 17 (required by modern Android Gradle plugins).
    - If you modify `eas.json`, do not remove this setting.
 
-4. Clear cache and rebuild:
+4. Ensure Dependencies are compatible:
+   - If you see `Unable to resolve module crypto` or similar, it means a library (like `axios`) is trying to use Node.js features not available on mobile.
+   - We have pinned `axios` to `^0.27.2` to avoid this. Run `npm install` in the `mobile_app` folder if building locally.
+
+5. Clear cache and rebuild:
    eas build -p android --profile preview --clear-cache
